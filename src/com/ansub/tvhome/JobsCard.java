@@ -431,6 +431,9 @@ final class JobsCard {
         String note = updated == null ? null : "Aggiornato " + when(updated)
                 + (sitesOk > 0 ? " · " + sitesOk + " siti ONU controllati" : "");
         sidePanel(head, note, list, px(920));
+        // Start on the first job, so the first OK opens it instead of only showing where focus is.
+        final View first = list.getChildAt(0);
+        first.post(first::requestFocus);
     }
 
     private void showJob(Job j) {
@@ -505,6 +508,7 @@ final class JobsCard {
         }
         box.setFocusable(true);
         sidePanel("Dettagli", null, box, px(920));
+        box.post(box::requestFocus);
     }
 
     // A panel from the right, in the same dark glass as the home screen's own panels. Back closes it.
