@@ -44,6 +44,7 @@ SHORT = {
     "united nations conference on trade and development": "UNCTAD",
     "department of economic and social affairs": "UN DESA",
     "office of internal oversight services": "OIOS",
+    "united nations interregional crime and justice research institute": "UNICRI",
 }
 
 
