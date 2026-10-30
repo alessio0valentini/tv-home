@@ -56,7 +56,7 @@ def main():
         except Exception as e:  # keep yesterday's list for this source
             kept = [j for j in prev_jobs if j.get("source") == name]
             found += kept
-            status[name] = {"ok": False, "count": len(kept), "error": f"{type(e).__name__}: {e}"[:300]}
+            status[name] = {"ok": False, "count": len(kept), "error": f"{type(e).__name__}: {e}"[:600]}
             print(f"{name:14} FAIL  kept {len(kept)} from last run: {e}")
             traceback.print_exc(file=sys.stderr)
 

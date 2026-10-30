@@ -56,28 +56,51 @@ def deadline_from_utc(stamp):
     return (t - timedelta(hours=5)).date().isoformat() if t.tzinfo else t.date().isoformat()
 
 
+# The site's own requests come from its job search page; some APIs only answer those.
+HEADERS = {"Origin": "https://careers.un.org", "Referer": "https://careers.un.org/jobopening?language=en"}
+
+# Request shapes to try, in order, until one reports openings: (first page number, body for a page).
+# The API isn't documented, so if the first stops working the next ones may still do.
+SHAPES = [
+    (0, lambda p: {"filterConfig": {"keyword": ""},
+                   "pagination": {"page": p, "itemPerPage": PAGE, "sortBy": "startDate", "sortDirection": -1}}),
+    (1, lambda p: {"filterConfig": {"keyword": ""},
+                   "pagination": {"page": p, "itemPerPage": PAGE, "sortBy": "startDate", "sortDirection": -1}}),
+    (0, lambda p: {"filterConfig": {}, "pagination": {"page": p, "itemPerPage": PAGE}}),
+]
+
+
+def read_page(body):
+    ans = post_json(API, body, HEADERS)
+    try:
+        if ans.get("status") != 1:
+            raise ValueError(f"status {ans.get('status')!r}: {ans.get('message')!r}")
+        return ans["data"]["list"], int(ans["data"]["count"] or 0), ans
+    except (AttributeError, KeyError, TypeError, ValueError) as e:
+        raise RuntimeError(f"careers.un.org: unexpected answer ({e!r}): {json.dumps(ans)[:150]}") from e
+
+
 def list_openings():
-    seen, count = {}, None
-    for page in range(MAX_PAGES):
-        if page:
-            time.sleep(DELAY)
-        body = {"filterConfig": {"keyword": ""},
-                "pagination": {"page": page, "itemPerPage": PAGE, "sortBy": "startDate", "sortDirection": -1}}
-        ans = post_json(API, body)
-        try:
-            if ans.get("status") != 1:
-                raise ValueError(f"status {ans.get('status')!r}: {ans.get('message')!r}")
-            items = ans["data"]["list"]
-            count = int(ans["data"]["count"])
-        except (AttributeError, KeyError, TypeError, ValueError) as e:
-            raise RuntimeError(f"careers.un.org: unexpected answer ({e!r})") from e
+    tried = []
+    for first, shape in SHAPES:
+        items, count, ans = read_page(shape(first))
+        if count:
+            break
+        tried.append(json.dumps(ans)[:120])
+        time.sleep(DELAY)
+    else:
+        raise RuntimeError("careers.un.org: API reports 0 openings for every request shape: " + " | ".join(tried))
+    seen = {it["jobId"]: it for it in items}
+    for page in range(first + 1, first + MAX_PAGES):
+        if len(seen) >= count:
+            break
+        time.sleep(DELAY)
+        items, _, _ = read_page(shape(page))
         before = len(seen)
         for it in items:
             seen[it["jobId"]] = it
-        if len(seen) == before or len(seen) >= count:  # empty or repeated page: stop
+        if len(seen) == before:  # empty or repeated page: stop
             break
-    if not count:
-        raise RuntimeError("careers.un.org: API reports 0 openings (request shape changed?)")
     if len(seen) < count:
         raise RuntimeError(f"careers.un.org: paging got {len(seen)} of {count} openings")
     if not any(it.get("dutyStation") for it in seen.values()):
