@@ -4,7 +4,11 @@
 > - `scraper/` legge i siti di lavoro delle agenzie (FAO, WFP, IFAD e le altre ONU con uffici a Roma).
 > - `.github/workflows/jobs.yml` lo esegue due volte al giorno e salva `jobs.json`.
 > - La TV scarica solo `jobs.json` (pochi KB) ogni qualche ora: `src/com/ansub/tvhome/JobsCard.java`.
-> - Installazione: `GREET=<nome> sh install.sh <IP_TV> "app1,app2,..."`
+> - Installazione: `GREET=<nome> KEYWORDS="parola1,parola2" sh install.sh <IP_TV> "app1,app2,..."`
+>   Con `KEYWORDS` il riquadro mostra solo le posizioni con una di quelle parole nel titolo
+>   (anche nelle forme francesi e spagnole; "climate change" non conta come "change").
+>   Nome e parole restano salvati solo sulla TV.
+> - Nel dettaglio di ogni posizione c'è un codice QR per aprire l'offerta dal telefono.
 >
 > Il resto di questo README è quello originale.
 
