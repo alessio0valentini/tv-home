@@ -1,0 +1,97 @@
+{
+ "updated": "2026-10-30T16:39:37Z",
+ "count": 4,
+ "sources": {
+  "fao": {
+   "ok": true,
+   "count": 3
+  },
+  "wfp": {
+   "ok": true,
+   "count": 1
+  },
+  "ifad": {
+   "ok": true,
+   "count": 0
+  },
+  "unsecretariat": {
+   "ok": false,
+   "count": 0,
+   "error": "RuntimeError: careers.un.org: API reports 0 openings (request shape changed?)"
+  },
+  "undp": {
+   "ok": true,
+   "count": 0
+  },
+  "unhcr": {
+   "ok": true,
+   "count": 0
+  },
+  "unido": {
+   "ok": true,
+   "count": 0
+  },
+  "unicef": {
+   "ok": true,
+   "count": 0
+  },
+  "iom": {
+   "ok": true,
+   "count": 0
+  },
+  "ilo": {
+   "ok": true,
+   "count": 0
+  },
+  "unops": {
+   "ok": true,
+   "count": 0
+  }
+ },
+ "jobs": [
+  {
+   "id": "WFP-JR127695",
+   "agency": "WFP",
+   "title": "Aviation Quality Assurance Officer P3",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-10-31",
+   "url": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Rome-Italy/Aviation-Quality-Assurance-Officer-P3_JR127695",
+   "source": "wfp",
+   "first_seen": ""
+  },
+  {
+   "id": "FAO-2602149",
+   "agency": "FAO",
+   "title": "Investigator",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-11-06",
+   "url": "https://jobs.fao.org/careersection/fao_external/jobdetail.ftl?job=2602149&lang=en",
+   "source": "fao",
+   "first_seen": ""
+  },
+  {
+   "id": "FAO-2602121",
+   "agency": "FAO",
+   "title": "Fishery Officer (Data Coordination)",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-11-10",
+   "url": "https://jobs.fao.org/careersection/fao_external/jobdetail.ftl?job=2602121&lang=en",
+   "source": "fao",
+   "first_seen": ""
+  },
+  {
+   "id": "FAO-2602223",
+   "agency": "FAO",
+   "title": "Programme Officer",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-11-18",
+   "url": "https://jobs.fao.org/careersection/fao_external/jobdetail.ftl?job=2602223&lang=en",
+   "source": "fao",
+   "first_seen": ""
+  }
+ ]
+}
