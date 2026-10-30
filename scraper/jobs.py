@@ -38,10 +38,12 @@ def main():
     status, found = {}, []
     for name in SOURCES:
         try:
-            mod = importlib.import_module(f"scraper.sources.{name}")
-        except ImportError:
-            continue  # not written yet
-        try:
+            try:
+                mod = importlib.import_module(f"scraper.sources.{name}")
+            except ModuleNotFoundError as e:
+                if e.name == f"scraper.sources.{name}":
+                    continue  # not written yet
+                raise
             got = mod.fetch()
             # The modules filter already; this keeps a slip in one of them off the TV.
             got = [j for j in got if is_p3(j.get("grade", "")) or is_p3(j.get("title", ""))]
