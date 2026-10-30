@@ -20,6 +20,7 @@ and filter here:
   * agency   -> dept.name (the hiring entity), shortened for a few well-known ones; else "UN Secretariat".
 """
 import json
+import sys
 import time
 from datetime import datetime, timedelta, timezone
 
@@ -29,7 +30,7 @@ AGENCY = "UN Secretariat"
 
 API = "https://careers.un.org/api/public/opening/jo/list/filteredV2/en"
 PUBLIC = "https://careers.un.org/jobSearchDescription/{}?language=en"
-PAGE = 50
+PAGE = 500  # the whole list fits in one or two pages, so paging can't skip or repeat much
 MAX_PAGES = 40
 DELAY = 0.5
 
@@ -101,8 +102,12 @@ def list_openings():
             seen[it["jobId"]] = it
         if len(seen) == before:  # empty or repeated page: stop
             break
-    if len(seen) < count:
+    # The list's order isn't stable between pages, so a few can be repeated or skipped; that's fine.
+    # Far fewer than the API reports means paging itself broke.
+    if len(seen) < 0.9 * count:
         raise RuntimeError(f"careers.un.org: paging got {len(seen)} of {count} openings")
+    if len(seen) < count:
+        print(f"careers.un.org: read {len(seen)} of {count} openings", file=sys.stderr)
     if not any(it.get("dutyStation") for it in seen.values()):
         raise RuntimeError("careers.un.org: no opening carries 'dutyStation' any more (format changed?)")
     return list(seen.values())
