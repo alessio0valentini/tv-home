@@ -3,3 +3,5 @@ key.jks
 *.apk
 .DS_Store
 .idea
+__pycache__/
+jobs.json.tmp
