@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T16:39:37Z",
+ "updated": "2026-10-30T16:44:21Z",
  "count": 4,
  "sources": {
   "fao": {
@@ -17,7 +17,7 @@
   "unsecretariat": {
    "ok": false,
    "count": 0,
-   "error": "RuntimeError: careers.un.org: API reports 0 openings (request shape changed?)"
+   "error": "RuntimeError: careers.un.org: paging got 440 of 463 openings"
   },
   "undp": {
    "ok": true,
