@@ -20,6 +20,21 @@ SOURCES = ["fao", "wfp", "ifad", "unsecretariat", "undp", "unhcr", "unido", "uni
 OUT = "jobs.json"
 
 
+def qr_rows(url):
+    """The QR code for a job's link, as one hex string per row (1 = dark), so the TV can draw it
+    with no QR library of its own. None if segno (pip install segno) isn't installed."""
+    try:
+        import segno
+    except ImportError:
+        return None
+    rows = []
+    for row in segno.make(url, error="m", micro=False).matrix:
+        bits = "".join("1" if b else "0" for b in row)
+        bits += "0" * (-len(bits) % 4)
+        rows.append(f"{int(bits, 2):0{len(bits) // 4}x}")
+    return rows
+
+
 def load_previous():
     try:
         with open(OUT, encoding="utf-8") as f:
@@ -75,6 +90,10 @@ def main():
         seen_titles.add(key)
         # On the very first run nothing is "new": everything was simply already open.
         j["first_seen"] = first_seen.get(j["id"], today if prev is not None else "")
+        if j.get("url"):
+            qr = qr_rows(j["url"])
+            if qr:
+                j["qr"] = qr
         jobs.append(j)
     jobs.sort(key=lambda j: (j["deadline"] or "9999", j["agency"], j["title"]))
 

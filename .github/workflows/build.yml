@@ -55,6 +55,8 @@ jobs:
         with:
           name: tvhome-apk
           path: out
+      - name: QR codes for the sample jobs
+        run: pip install --quiet segno==1.6.6
       - name: Enable KVM
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -69,7 +71,7 @@ jobs:
           disable-animations: true
           script: sh ci/smoke-test.sh emulator-5554 smoke-api${{ matrix.api }}.png
         env:
-          JOBS_FEED: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/ci/sample-jobs.json
+          JOBS_SAMPLES: "1"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

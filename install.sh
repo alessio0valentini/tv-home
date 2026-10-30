@@ -7,6 +7,8 @@
 #   CLOCK=24 sh install.sh <TV_IP>               24-hour clock (12, 24, or auto for the TV's own)
 #   GREET=Anna sh install.sh <TV_IP>             the greeting card with UN P-3 jobs in Rome
 #                                                (FEED=<url> reads another jobs.json; GREET=none turns it off)
+#   KEYWORDS="strategy,innovation" GREET=Anna sh install.sh <TV_IP>   only jobs with one of these words
+#                                                in the title; "-some phrase" leaves a phrase out
 #   FAKE_INPUT=1 sh install.sh <emulator>        testing only: add a throwaway TV input, so an
 #                                                emulator with no HDMI ports still has one to draw
 #
@@ -65,7 +67,7 @@ if [ "$FAKE_INPUT" = 1 ]; then
   adb -s "$TV" install -r "$FAKE" >/dev/null
 fi
 
-if [ -n "$APPS" ] || [ -n "$QUICK" ] || [ -n "$CLOCK" ] || [ -n "$FAKE_INPUT" ] || [ -n "$GREET" ] || [ -n "$FEED" ]; then
+if [ -n "$APPS" ] || [ -n "$QUICK" ] || [ -n "$CLOCK" ] || [ -n "$FAKE_INPUT" ] || [ -n "$GREET" ] || [ -n "$FEED" ] || [ -n "$KEYWORDS" ]; then
   # The stamp makes the app apply this list once, even if Android later replays this start.
   set -- --es stamp "$(date +%s)"
   [ -n "$APPS" ] && set -- "$@" --es apps "\"$APPS\""
@@ -74,6 +76,7 @@ if [ -n "$APPS" ] || [ -n "$QUICK" ] || [ -n "$CLOCK" ] || [ -n "$FAKE_INPUT" ] 
   [ "$FAKE_INPUT" = 1 ] && set -- "$@" --es fakeinputs 1
   [ -n "$GREET" ] && set -- "$@" --es greet "\"$GREET\""
   [ -n "$FEED" ] && set -- "$@" --es feed "\"$FEED\""
+  [ -n "$KEYWORDS" ] && set -- "$@" --es keywords "\"$KEYWORDS\""
   adb -s "$TV" shell am start -n com.ansub.tvhome/.MainActivity "$@" >/dev/null
 fi
 

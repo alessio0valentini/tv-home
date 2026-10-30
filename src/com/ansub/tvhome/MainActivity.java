@@ -276,7 +276,7 @@ public class MainActivity extends Activity {
         setIntent(intent);
         // A clock or greeting change needs the whole page rebuilt; a new app list only needs the tiles.
         boolean clock = intent != null && (intent.hasExtra("clock") || intent.hasExtra(JobsCard.PREF_GREET)
-                || intent.hasExtra(JobsCard.PREF_FEED));
+                || intent.hasExtra(JobsCard.PREF_FEED) || intent.hasExtra(JobsCard.PREF_KEYWORDS));
         if (saveConfig(intent)) {
             if (clock) recreate();
             else buildTiles();
@@ -294,7 +294,9 @@ public class MainActivity extends Activity {
         String fake = intent == null ? null : intent.getStringExtra("fakeinputs");
         String greet = intent == null ? null : intent.getStringExtra(JobsCard.PREF_GREET);
         String feed = intent == null ? null : intent.getStringExtra(JobsCard.PREF_FEED);
-        if (apps == null && quick == null && clock == null && fake == null && greet == null && feed == null) return false;
+        String keywords = intent == null ? null : intent.getStringExtra(JobsCard.PREF_KEYWORDS);
+        if (apps == null && quick == null && clock == null && fake == null && greet == null && feed == null
+                && keywords == null) return false;
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
         String stamp = intent.getStringExtra("stamp");
         if (stamp != null && stamp.equals(prefs.getString("stamp", null))) return false;
@@ -315,7 +317,8 @@ public class MainActivity extends Activity {
             if (clock.isEmpty() || clock.equalsIgnoreCase("auto")) e.remove(PREF_CLOCK);
             else e.putString(PREF_CLOCK, clock);
         }
-        // The jobs card: a name to greet and, optionally, another jobs.json. "none" turns either off.
+        // The jobs card: a name to greet, the words a job title needs, and optionally another jobs.json.
+        // "none" turns any of them off.
         if (greet != null) {
             greet = greet.trim();
             if (greet.isEmpty() || greet.equalsIgnoreCase("none")) e.remove(JobsCard.PREF_GREET);
@@ -325,6 +328,12 @@ public class MainActivity extends Activity {
             feed = feed.trim();
             if (feed.isEmpty() || feed.equalsIgnoreCase("none")) e.remove(JobsCard.PREF_FEED);
             else e.putString(JobsCard.PREF_FEED, feed);
+            e.remove(JobsCard.PREF_JSON).remove(JobsCard.PREF_FETCHED); // read the new feed now
+        }
+        if (keywords != null) {
+            keywords = keywords.trim();
+            if (keywords.isEmpty() || keywords.equalsIgnoreCase("none")) e.remove(JobsCard.PREF_KEYWORDS);
+            else e.putString(JobsCard.PREF_KEYWORDS, keywords);
         }
         // Set only by install.sh's FAKE_INPUT=1, which also installs the throwaway input itself.
         // It is for an emulator, which has no HDMI ports, and never for a real TV.

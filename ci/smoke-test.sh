@@ -65,23 +65,63 @@ fi
 
 adb -s "$TV" exec-out screencap -p > "$SHOT"
 
-# The greeting card reads a jobs.json. CI points it at ci/sample-jobs.json in this commit.
-if [ -n "$JOBS_FEED" ]; then
-  echo "== the jobs card greets and lists jobs"
-  GREET=Test FEED="$JOBS_FEED" YES=1 sh install.sh "$TV" >/dev/null
+# The greeting card, in every state. Sample feeds are served from this machine through adb reverse
+# (the app allows plain HTTP only to 127.0.0.1), with deadlines counted from today.
+if [ "$JOBS_SAMPLES" = 1 ]; then
+  echo "== the jobs card"
+  feeds=$(mktemp -d)
+  python3 ci/make-sample-jobs.py "$feeds" >/dev/null
+  python3 -m http.server 8765 --bind 127.0.0.1 --directory "$feeds" >/dev/null 2>&1 &
+  server=$!
+  adb -s "$TV" reverse tcp:8765 tcp:8765 >/dev/null
+  url=http://127.0.0.1:8765
+  shot() { adb -s "$TV" exec-out screencap -p > "${SHOT%.png}-jobs-$1.png"; }
+  # Waits up to 30s for a text on screen; the card loads its feed on a background thread.
+  wait_text() { for _ in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do ui | grep -q "$1" && return 0; sleep 2; done; return 1; }
+  feed() {
+    adb -s "$TV" shell am start -n com.ansub.tvhome/.MainActivity --es stamp "$(date +%s%N)" \
+      --es feed "$url/$1.json" >/dev/null
+  }
+  focused() { ui | grep -o '<node[^>]*content-desc="Offerte di lavoro"[^>]*>' | grep -q 'focused="true"'; }
+
+  GREET=Test KEYWORDS="innovation,transformation,change,management,strategy" FEED="$url/many.json" \
+    YES=1 sh install.sh "$TV" >/dev/null
   adb -s "$TV" shell input keyevent KEYCODE_HOME
   wait_home || fail "home screen not in front after turning on the jobs card"
-  card=
-  for _ in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
-    x=$(ui)
-    echo "$x" | grep -q 'text="Ciao Test,"' && card=1
-    echo "$x" | grep -q 'posizioni P3 aperte a Roma' && break
-    sleep 2
-  done
-  [ -n "$card" ] || fail "no jobs card"
-  echo "$x" | grep -q 'posizioni P3 aperte a Roma' && echo "   the card shows the jobs" \
-    || echo "   the card is there, but the feed didn't load (no network in the emulator?)"
-  adb -s "$TV" exec-out screencap -p > "${SHOT%.png}-jobs.png"
+  wait_text 'text="Ciao Test,"' || fail "no jobs card"
+  wait_text '5 posizioni P3 a Roma per te' || fail "the card didn't show the 5 matching jobs"
+  ui | grep -q 'Climate Change Officer' && fail "a job without the keywords is on the card"
+  echo "   5 jobs for the keywords, the others left out"
+  shot many
+
+  # Up from the apps reaches the card; OK opens the list, OK on a job its details with the QR code.
+  for _ in 1 2 3; do focused && break; adb -s "$TV" shell input keyevent KEYCODE_DPAD_UP; sleep 1; done
+  if focused; then
+    adb -s "$TV" shell input keyevent KEYCODE_DPAD_CENTER
+    wait_text 'Posizioni P3 a Roma per te' || fail "OK on the card didn't open the list"
+    ui | grep -q 'Climate Change Officer' && fail "a job without the keywords is in the list"
+    shot list
+    adb -s "$TV" shell input keyevent KEYCODE_DPAD_CENTER
+    wait_text 'Inquadra con il telefono' || fail "OK on a job didn't open its details with a QR code"
+    shot detail
+    adb -s "$TV" shell input keyevent KEYCODE_BACK; sleep 1
+    adb -s "$TV" shell input keyevent KEYCODE_BACK; sleep 1
+    echo "   list and details open, with a QR code"
+  else
+    echo "   couldn't move the focus to the card: list and details not checked"
+  fi
+
+  feed one
+  wait_text "1 posizione P3 a Roma per te" || fail "the card didn't show the one matching job"
+  shot one
+  feed empty
+  wait_text 'nessuna posizione P3 a Roma per te' || fail "the card didn't show the empty state"
+  wait_text 'Controllo 11 siti ONU' || fail "the empty card doesn't say the search goes on"
+  shot empty
+  echo "   one job and no jobs shown right"
+
+  kill "$server" 2>/dev/null || true
+  adb -s "$TV" reverse --remove tcp:8765 >/dev/null 2>&1 || true
 fi
 
 echo "== check.sh refuses a list it can't read"
