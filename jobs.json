@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T16:44:21Z",
+ "updated": "2026-10-30T16:47:45Z",
  "count": 4,
  "sources": {
   "fao": {
@@ -15,9 +15,8 @@
    "count": 0
   },
   "unsecretariat": {
-   "ok": false,
-   "count": 0,
-   "error": "RuntimeError: careers.un.org: paging got 440 of 463 openings"
+   "ok": true,
+   "count": 0
   },
   "undp": {
    "ok": true,
