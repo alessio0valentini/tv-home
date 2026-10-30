@@ -430,7 +430,7 @@ final class JobsCard {
         String head = filtered ? "Posizioni P3 a Roma per te" : "Posizioni P3 a Roma";
         String note = updated == null ? null : "Aggiornato " + when(updated)
                 + (sitesOk > 0 ? " · " + sitesOk + " siti ONU controllati" : "");
-        sidePanel(head, note, list, px(920));
+        sidePanel(head, note, list, px(920), false);
         // Start on the first job, so the first OK opens it instead of only showing where focus is.
         final View first = list.getChildAt(0);
         first.post(first::requestFocus);
@@ -507,12 +507,13 @@ final class JobsCard {
             box.addView(apply, ap);
         }
         box.setFocusable(true);
-        sidePanel("Dettagli", null, box, px(920));
+        sidePanel("Dettagli", null, box, px(920), true);
         box.post(box::requestFocus);
     }
 
     // A panel from the right, in the same dark glass as the home screen's own panels. Back closes it.
-    private void sidePanel(String title, String note, View content, int width) {
+    // One opened over another panel is solid, so the list behind doesn't show through.
+    private void sidePanel(String title, String note, View content, int width, boolean onTop) {
         Dialog d = new Dialog(a, android.R.style.Theme_Material_Dialog_NoActionBar);
         LinearLayout box = new LinearLayout(a);
         box.setOrientation(LinearLayout.VERTICAL);
@@ -537,7 +538,7 @@ final class JobsCard {
         box.addView(scroll, lp);
         d.setContentView(box);
         Window w = d.getWindow();
-        w.setBackgroundDrawable(new ColorDrawable(0xF7161113));
+        w.setBackgroundDrawable(new ColorDrawable(onTop ? 0xFF161113 : 0xF7161113));
         w.setLayout(width, -1);
         w.setGravity(Gravity.END);
         w.setDimAmount(0.5f);
