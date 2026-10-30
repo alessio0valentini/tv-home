@@ -157,6 +157,7 @@ public class MainActivity extends Activity {
     private static Typeface regular, semibold;
 
     private FrameLayout root; // the page, inside a vertical scroller
+    private JobsCard jobsCard; // null unless a name or a jobs feed was set at install time
     private int tileW, tileH, gridTop; // app grid geometry, set by buildTiles
     private final List<View> tiles = new ArrayList<>();
     private final Map<View, ValueAnimator> lifts = new WeakHashMap<>(); // a running focus fade per tile
@@ -231,6 +232,14 @@ public class MainActivity extends Activity {
         clock.addView(time, tp);
         root.addView(clock, at(px(MARGIN), px(92), -2, -2));
 
+        // The greeting card with the UN jobs in Rome, right of the clock (see JobsCard).
+        if (JobsCard.enabled(prefs())) {
+            jobsCard = new JobsCard(this, prefs(), scale, regular, semibold);
+            int cw = px(JobsCard.WIDTH);
+            root.addView(jobsCard.view(), at(getResources().getDisplayMetrics().widthPixels - px(MARGIN) - cw,
+                    px(JobsCard.TOP), cw, -2));
+        }
+
         moveHint = text(px(24), 0xA8FFFFFF, regular);
         moveHint.setText(Strings.t("Use the arrows to move it, then press OK"));
         moveHint.setVisibility(View.GONE);
@@ -265,8 +274,9 @@ public class MainActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
-        // A clock change needs the whole page rebuilt; a new app list only needs the tiles.
-        boolean clock = intent != null && intent.hasExtra("clock");
+        // A clock or greeting change needs the whole page rebuilt; a new app list only needs the tiles.
+        boolean clock = intent != null && (intent.hasExtra("clock") || intent.hasExtra(JobsCard.PREF_GREET)
+                || intent.hasExtra(JobsCard.PREF_FEED));
         if (saveConfig(intent)) {
             if (clock) recreate();
             else buildTiles();
@@ -282,7 +292,9 @@ public class MainActivity extends Activity {
         String quick = intent == null ? null : intent.getStringExtra("quick");
         String clock = intent == null ? null : intent.getStringExtra("clock");
         String fake = intent == null ? null : intent.getStringExtra("fakeinputs");
-        if (apps == null && quick == null && clock == null && fake == null) return false;
+        String greet = intent == null ? null : intent.getStringExtra(JobsCard.PREF_GREET);
+        String feed = intent == null ? null : intent.getStringExtra(JobsCard.PREF_FEED);
+        if (apps == null && quick == null && clock == null && fake == null && greet == null && feed == null) return false;
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
         String stamp = intent.getStringExtra("stamp");
         if (stamp != null && stamp.equals(prefs.getString("stamp", null))) return false;
@@ -302,6 +314,17 @@ public class MainActivity extends Activity {
             clock = clock.trim();
             if (clock.isEmpty() || clock.equalsIgnoreCase("auto")) e.remove(PREF_CLOCK);
             else e.putString(PREF_CLOCK, clock);
+        }
+        // The jobs card: a name to greet and, optionally, another jobs.json. "none" turns either off.
+        if (greet != null) {
+            greet = greet.trim();
+            if (greet.isEmpty() || greet.equalsIgnoreCase("none")) e.remove(JobsCard.PREF_GREET);
+            else e.putString(JobsCard.PREF_GREET, greet);
+        }
+        if (feed != null) {
+            feed = feed.trim();
+            if (feed.isEmpty() || feed.equalsIgnoreCase("none")) e.remove(JobsCard.PREF_FEED);
+            else e.putString(JobsCard.PREF_FEED, feed);
         }
         // Set only by install.sh's FAKE_INPUT=1, which also installs the throwaway input itself.
         // It is for an emulator, which has no HDMI ports, and never for a real TV.
@@ -352,6 +375,7 @@ public class MainActivity extends Activity {
             buildTiles();
         }
         refreshNetwork();
+        if (jobsCard != null) jobsCard.refresh();
         View f = getCurrentFocus();
         if (f == null && !tiles.isEmpty()) tiles.get(0).requestFocus();
         HomeButton.onHomeResumed(this); // back on this home screen: Home comes here again

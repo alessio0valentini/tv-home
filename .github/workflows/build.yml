@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
     tags: ["v*"]
+    # The twice-a-day jobs.json update doesn't need the app rebuilt and tested.
+    paths-ignore: ["jobs.json", "scraper/**", ".github/workflows/jobs.yml", "**.md"]
   pull_request:
   workflow_dispatch:
 
@@ -66,6 +68,8 @@ jobs:
           profile: tv_1080p
           disable-animations: true
           script: sh ci/smoke-test.sh emulator-5554 smoke-api${{ matrix.api }}.png
+        env:
+          JOBS_FEED: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/ci/sample-jobs.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

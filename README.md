@@ -1,3 +1,13 @@
+> **Questa è una versione personale di [TV Detox](https://github.com/Ansub/tv-detox)** (licenza MIT, di Ansub Khan).
+> In più ha il riquadro **di benvenuto** nella Home: le posizioni **P3** aperte a **Roma** nelle agenzie ONU.
+>
+> - `scraper/` legge i siti di lavoro delle agenzie (FAO, WFP, IFAD e le altre ONU con uffici a Roma).
+> - `.github/workflows/jobs.yml` lo esegue due volte al giorno e salva `jobs.json`.
+> - La TV scarica solo `jobs.json` (pochi KB) ogni qualche ora: `src/com/ansub/tvhome/JobsCard.java`.
+> - Installazione: `GREET=<nome> sh install.sh <IP_TV> "app1,app2,..."`
+>
+> Il resto di questo README è quello originale.
+
 <div align="center">
 
 # TV Detox

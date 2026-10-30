@@ -65,6 +65,25 @@ fi
 
 adb -s "$TV" exec-out screencap -p > "$SHOT"
 
+# The greeting card reads a jobs.json. CI points it at ci/sample-jobs.json in this commit.
+if [ -n "$JOBS_FEED" ]; then
+  echo "== the jobs card greets and lists jobs"
+  GREET=Test FEED="$JOBS_FEED" YES=1 sh install.sh "$TV" >/dev/null
+  adb -s "$TV" shell input keyevent KEYCODE_HOME
+  wait_home || fail "home screen not in front after turning on the jobs card"
+  card=
+  for _ in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+    x=$(ui)
+    echo "$x" | grep -q 'text="Ciao Test,"' && card=1
+    echo "$x" | grep -q 'posizioni P3 aperte a Roma' && break
+    sleep 2
+  done
+  [ -n "$card" ] || fail "no jobs card"
+  echo "$x" | grep -q 'posizioni P3 aperte a Roma' && echo "   the card shows the jobs" \
+    || echo "   the card is there, but the feed didn't load (no network in the emulator?)"
+  adb -s "$TV" exec-out screencap -p > "${SHOT%.png}-jobs.png"
+fi
+
 echo "== check.sh refuses a list it can't read"
 list=$(mktemp)
 echo "# nothing to check" > "$list"
