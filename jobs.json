@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T10:28:04Z",
+ "updated": "2026-10-31T17:17:49Z",
  "count": 4,
  "sources": {
   "fao": {
@@ -11,9 +11,8 @@
    "count": 1
   },
   "ifad": {
-   "ok": false,
-   "count": 0,
-   "error": "HTTPError: HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 0
   },
   "unsecretariat": {
    "ok": true,
