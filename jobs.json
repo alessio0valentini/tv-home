@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-31T17:17:49Z",
- "count": 4,
+ "updated": "2026-11-01T11:22:41Z",
+ "count": 3,
  "sources": {
   "fao": {
    "ok": true,
@@ -8,7 +8,7 @@
   },
   "wfp": {
    "ok": true,
-   "count": 1
+   "count": 0
   },
   "ifad": {
    "ok": true,
@@ -48,64 +48,6 @@
   }
  },
  "jobs": [
-  {
-   "id": "WFP-JR127695",
-   "agency": "WFP",
-   "title": "Aviation Quality Assurance Officer P3",
-   "grade": "P-3",
-   "location": "Rome, Italy",
-   "deadline": "2026-10-31",
-   "url": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Rome-Italy/Aviation-Quality-Assurance-Officer-P3_JR127695",
-   "source": "wfp",
-   "first_seen": "",
-   "qr": [
-    "fe77121f0bf8",
-    "826ccfac9208",
-    "baa4e8add2e8",
-    "baf9efa51ae8",
-    "ba87bfcf3ae8",
-    "82b148c94208",
-    "feaaaaaaabf8",
-    "00fd98989000",
-    "be12dfc723e0",
-    "c890bb5698f8",
-    "aee744e17f70",
-    "cc3961128be0",
-    "7f6627802408",
-    "8d22004a5db8",
-    "eab9cfa86690",
-    "414945ffb7f8",
-    "428672c55500",
-    "d111884f1c70",
-    "6e6729c9b070",
-    "44f2759891f8",
-    "8faeffa16fd8",
-    "c8cdd88f88e8",
-    "aab1bae87ab0",
-    "d88d78bb88e8",
-    "9fe32fc75fc0",
-    "346afe4f4628",
-    "36ff097c3c50",
-    "8c8a93c5b278",
-    "2702a1c72ad0",
-    "f199624e8258",
-    "03794f372950",
-    "cc8e889cf378",
-    "827d48450580",
-    "e94d5ac6c828",
-    "0ad2667dfc00",
-    "780529849b68",
-    "9bec6fc56f80",
-    "00baa89f18f8",
-    "fe473af0fab0",
-    "82db489e58f8",
-    "ba984fe33fd8",
-    "bac21ddfc3b8",
-    "ba9f43b1ec10",
-    "825b2a6a9c60",
-    "febcf7b33ed0"
-   ]
-  },
   {
    "id": "FAO-2602149",
    "agency": "FAO",
