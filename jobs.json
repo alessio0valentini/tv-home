@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-03T19:40:20Z",
- "count": 4,
+ "updated": "2026-11-04T12:18:15Z",
+ "count": 5,
  "sources": {
   "fao": {
    "ok": true,
@@ -32,7 +32,7 @@
   },
   "unicef": {
    "ok": true,
-   "count": 1
+   "count": 2
   },
   "iom": {
    "ok": true,
@@ -262,6 +262,72 @@
     "ba1e5a85f8",
     "8234af5d00",
     "fefd0dfa18"
+   ]
+  },
+  {
+   "id": "UNICEF-596797",
+   "agency": "UNICEF",
+   "title": "Fund Raising Specialist (IG Legacy Pathways), P-3, Fixed Term Position, Rome, Italy, Private Fund Raising and Partnerships, #00113289",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-11-18",
+   "url": "https://jobs.unicef.org/en-us/job/596797/fund-raising-specialist-ig-legacy-pathways-p3-fixed-term-position-rome-italy-private-fund-raising-and-partnerships-00113289",
+   "source": "unicef",
+   "first_seen": "2026-11-04",
+   "qr": [
+    "fe3bb09f4123f8",
+    "820415c07f7208",
+    "ba9ef682d492e8",
+    "bad8b4592c6ae8",
+    "bade1fff8c62e8",
+    "828b3a89a3e208",
+    "feaaaaaaaaabf8",
+    "008b858a008800",
+    "be0ea0f99f1be0",
+    "a812f68e9d7548",
+    "c6960a61f302a0",
+    "e894d38b80fb10",
+    "1bd169af7e2bf8",
+    "f848d67b083188",
+    "226a5257a39fe0",
+    "513eafd7f4b440",
+    "b34951a71a69f0",
+    "514fd70f5df1f8",
+    "0b79da6152cb60",
+    "6874b7c4a09e58",
+    "b2566b237d69b0",
+    "9862f577193098",
+    "feefb2a8ff1aa0",
+    "d5f21b5cd7bc40",
+    "2fd624fe4a2ff0",
+    "18cf938b85f8c8",
+    "3ab6d1a96b5a90",
+    "88c0c18b02c8c0",
+    "dfcfd0fe4c4ff8",
+    "391aaf2f5c66d8",
+    "cf926a787a9160",
+    "b1b7162497db90",
+    "462c85e81c6f60",
+    "f1071f141c67b8",
+    "ffa4b8fb634cc0",
+    "418bf464c19e90",
+    "9290d4d14d6030",
+    "055817b254e7e8",
+    "233c3c295f5040",
+    "51c18140a0db40",
+    "4697e4cf3d6828",
+    "41c8a137906cd8",
+    "de8cb2ac2ec180",
+    "6159a1c492b7c8",
+    "12ec19ff0c4fa0",
+    "00930b8e9538c8",
+    "fe439aac6b1a90",
+    "82f2368827b8c0",
+    "ba9312ff9b1fe0",
+    "ba9225c68ce938",
+    "baabf6edbb55d8",
+    "82300c42a5b990",
+    "fef472f77a0760"
    ]
   }
  ]
