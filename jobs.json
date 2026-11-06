@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T20:08:50Z",
- "count": 5,
+ "updated": "2026-11-06T12:15:23Z",
+ "count": 6,
  "sources": {
   "fao": {
    "ok": false,
    "count": 3,
-   "error": "RuntimeError: FAO Taleo search (en): got 74 of 80 rows"
+   "error": "RuntimeError: FAO Taleo search (en): got 75 of 81 rows"
   },
   "wfp": {
    "ok": true,
@@ -13,7 +13,7 @@
   },
   "ifad": {
    "ok": true,
-   "count": 0
+   "count": 1
   },
   "unsecretariat": {
    "ok": true,
@@ -329,6 +329,72 @@
     "baabf6edbb55d8",
     "82300c42a5b990",
     "fef472f77a0760"
+   ]
+  },
+  {
+   "id": "IFAD-38956",
+   "agency": "IFAD",
+   "title": "Communications Officer (Partnerships and Regional Engagement Coordination) - Call for Interest (Temporary Professional Officer)",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-11-19",
+   "url": "https://job.ifad.org/psc/IFHRPRDE/CAREERS/JOBS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&JobOpeningId=38956&PostingSeq=1&SiteId=1000&languageCd=ENG&FOCUS=Applicant",
+   "source": "ifad",
+   "first_seen": "2026-11-06",
+   "qr": [
+    "fe968be20123f8",
+    "829705b7353208",
+    "ba120783a112e8",
+    "ba89fca07b6ae8",
+    "ba4e4af95f22e8",
+    "8247d28937a208",
+    "feaaaaaaaaabf8",
+    "00c7668968f800",
+    "b72566fd55aa58",
+    "e81e8d8794e508",
+    "e2cb0b12976f10",
+    "e1a4890ff08288",
+    "56a4d0475c0398",
+    "614c4a514b9938",
+    "3f6a61390359a8",
+    "9956e1cc1dc250",
+    "233cf4a3a14820",
+    "c437f1bce58350",
+    "b36d80e3c3de00",
+    "953d9062ccb778",
+    "6303624251d970",
+    "f466e59ed4b010",
+    "f23a9fd5aa3230",
+    "09208509ad0b40",
+    "2ff7c9f90d7ff0",
+    "f8d639894f18f0",
+    "4ae9aead362ad8",
+    "18d0188b51c8c0",
+    "ef9addf9c13fc0",
+    "d91bebe879cf00",
+    "472522bd150040",
+    "bcbb9fe5a4d368",
+    "2b2ab61c70f9c8",
+    "21d247b784a7a8",
+    "e72d9d33b27920",
+    "a860fada407818",
+    "b6c5dd4f3a4a50",
+    "f8436fe0ce9660",
+    "4e680ad9395698",
+    "9147fd60252dd8",
+    "6b5d796de72f80",
+    "58c55acce98158",
+    "dee51ad7b05000",
+    "61cffc157798b0",
+    "12ab2af874ffe8",
+    "00a55a8e0178d0",
+    "fec056a8c8fab0",
+    "82c7118e2c0890",
+    "ba3ddaff5e1ff0",
+    "bafc00ed564578",
+    "bae0ca5f60a500",
+    "8212232abbc950",
+    "fed41475a330f0"
    ]
   }
  ]
