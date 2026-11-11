@@ -1,14 +1,15 @@
 {
- "updated": "2026-11-10T19:53:03Z",
- "count": 8,
+ "updated": "2026-11-11T11:57:20Z",
+ "count": 6,
  "sources": {
   "fao": {
-   "ok": true,
-   "count": 2
+   "ok": false,
+   "count": 2,
+   "error": "RuntimeError: FAO Taleo search (en): got 75 of 81 rows"
   },
   "wfp": {
    "ok": true,
-   "count": 3
+   "count": 2
   },
   "ifad": {
    "ok": true,
@@ -31,8 +32,9 @@
    "count": 0
   },
   "unicef": {
-   "ok": true,
-   "count": 2
+   "ok": false,
+   "count": 2,
+   "error": "RuntimeError: UNICEF: https://jobs.unicef.org/en-us/listing/?page=1&page-items=500 answered with the AWS WAF bot challenge (HTTP 202, empty body) 3 times"
   },
   "iom": {
    "ok": true,
@@ -48,56 +50,6 @@
   }
  },
  "jobs": [
-  {
-   "id": "FAO-2602121",
-   "agency": "FAO",
-   "title": "Fishery Officer (Data Coordination)",
-   "grade": "P-3",
-   "location": "Rome, Italy",
-   "deadline": "2026-11-10",
-   "url": "https://jobs.fao.org/careersection/fao_external/jobdetail.ftl?job=2602121&lang=en",
-   "source": "fao",
-   "first_seen": "",
-   "qr": [
-    "fe04f1f3f8",
-    "826a2d7a08",
-    "ba1be0b2e8",
-    "ba5c9302e8",
-    "ba7ae17ae8",
-    "8288721a08",
-    "feaaaaabf8",
-    "0049de1800",
-    "96c1176d00",
-    "cc6f0e2628",
-    "172eda0138",
-    "b95336fb80",
-    "47785d5e18",
-    "641c5c8738",
-    "52468b2ba8",
-    "098b754c98",
-    "7b716c0768",
-    "4997a72ad8",
-    "e787cec578",
-    "b5225e3bb0",
-    "0b3905fa90",
-    "05b68eaf48",
-    "6ad69c4618",
-    "b18db56c10",
-    "3a8acefe58",
-    "1d29d4a318",
-    "824cef46a8",
-    "416d76d7c0",
-    "ffa6578fa8",
-    "008685b8c8",
-    "fe56025ad8",
-    "828474b8f0",
-    "ba098eefc8",
-    "baa906c9a0",
-    "ba165a85f8",
-    "822caf5d00",
-    "feed0dfa18"
-   ]
-  },
   {
    "id": "UNICEF-596785",
    "agency": "UNICEF",
@@ -344,64 +296,6 @@
     "bae0ca5f60a500",
     "8212232abbc950",
     "fed41475a330f0"
-   ]
-  },
-  {
-   "id": "WFP-JR128308",
-   "agency": "WFP",
-   "title": "Financial Business System Analyst (P3)",
-   "grade": "P-3",
-   "location": "Rome, Italy",
-   "deadline": "2026-11-24",
-   "url": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Rome-Italy/Financial-Business-System-Analyst--P3-_JR128308",
-   "source": "wfp",
-   "first_seen": "2026-11-10",
-   "qr": [
-    "fec4c92a8bf8",
-    "82cfb3c51208",
-    "bac1daa5d2e8",
-    "ba17e1dcdae8",
-    "bae61feabae8",
-    "827068950208",
-    "feaaaaaaabf8",
-    "004b28ed5000",
-    "9fa62f8804b8",
-    "f95b336ffb70",
-    "86110bc46d38",
-    "1826a718fa20",
-    "1eb8fdeb92d0",
-    "a49813339b20",
-    "3f884fe14280",
-    "61a35bc75470",
-    "c2903aa1c748",
-    "35e5d71b6dd0",
-    "1377f2d406a8",
-    "f45449c810e0",
-    "bfaeafe82fc8",
-    "78c018f778e0",
-    "ba9b9aeceaf8",
-    "d8f4d8a6f8a8",
-    "ffd59faaef98",
-    "45dda23f0b30",
-    "3e339b300cc0",
-    "35cd3de551e8",
-    "a7a5a0f3b880",
-    "fd82f552f390",
-    "e3cc9c5a9f88",
-    "2dc09c8d3468",
-    "3759538c2108",
-    "35ad50f62ba0",
-    "0a67ac316f08",
-    "7877fc99cba8",
-    "9b1d0fc8ff98",
-    "00d438eed8e0",
-    "feabeab99aa0",
-    "82b8e8a4b8f0",
-    "bae26fc5af90",
-    "baebbb43ba78",
-    "ba2399dc4ac8",
-    "8252161b5b78",
-    "feaae5fa1240"
    ]
   },
   {
