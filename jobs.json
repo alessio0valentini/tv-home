@@ -1,11 +1,10 @@
 {
- "updated": "2026-11-13T19:54:03Z",
- "count": 7,
+ "updated": "2026-11-14T11:36:42Z",
+ "count": 8,
  "sources": {
   "fao": {
-   "ok": false,
-   "count": 1,
-   "error": "RuntimeError: FAO Taleo search (en): got 74 of 80 rows"
+   "ok": true,
+   "count": 2
   },
   "wfp": {
    "ok": true,
@@ -478,6 +477,56 @@
     "ba827e17a81d8",
     "822457b26cd60",
     "fe9da1135c278"
+   ]
+  },
+  {
+   "id": "FAO-2602337",
+   "agency": "FAO",
+   "title": "Statistician (Statistical Working System)",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-12-04",
+   "url": "https://jobs.fao.org/careersection/fao_external/jobdetail.ftl?job=2602337&lang=en",
+   "source": "fao",
+   "first_seen": "2026-11-14",
+   "qr": [
+    "fe1ef1f3f8",
+    "826a2d7a08",
+    "ba12e0b2e8",
+    "ba5c9302e8",
+    "ba7ae17ae8",
+    "82ea721a08",
+    "feaaaaabf8",
+    "000dde1800",
+    "96a9176d00",
+    "f8770e2628",
+    "37beda0138",
+    "995336fb80",
+    "66685d5e18",
+    "ec185c8738",
+    "5e608b2ba8",
+    "018f754c98",
+    "67b56c0768",
+    "68ada72ad8",
+    "d607cec578",
+    "b5ba5e3bb0",
+    "2a3905fa90",
+    "85b28eaf48",
+    "e6d69c4618",
+    "71cdb56c10",
+    "76c8cefe58",
+    "1913d4a318",
+    "935cef46a8",
+    "716d6ed7c0",
+    "dfb6578fa8",
+    "008285b8c8",
+    "fe36065ad8",
+    "82a074b8f0",
+    "ba038eefc8",
+    "bab306c9a0",
+    "ba0e5285f8",
+    "822caf5d00",
+    "fefd0dfa18"
    ]
   }
  ]
