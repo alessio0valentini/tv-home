@@ -1,10 +1,11 @@
 {
- "updated": "2026-11-16T12:55:16Z",
+ "updated": "2026-11-16T22:22:31Z",
  "count": 8,
  "sources": {
   "fao": {
-   "ok": true,
-   "count": 2
+   "ok": false,
+   "count": 2,
+   "error": "RuntimeError: FAO Taleo search (en): got 71 of 77 rows"
   },
   "wfp": {
    "ok": true,
