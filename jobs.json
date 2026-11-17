@@ -1,11 +1,10 @@
 {
- "updated": "2026-11-17T13:38:32Z",
+ "updated": "2026-11-17T21:08:01Z",
  "count": 9,
  "sources": {
   "fao": {
-   "ok": false,
-   "count": 2,
-   "error": "RuntimeError: FAO Taleo search (en): got 73 of 79 rows"
+   "ok": true,
+   "count": 2
   },
   "wfp": {
    "ok": true,
@@ -41,9 +40,8 @@
    "count": 0
   },
   "ilo": {
-   "ok": false,
-   "count": 0,
-   "error": "HTTPError: HTTP Error 503: Service Unavailable"
+   "ok": true,
+   "count": 0
   },
   "unops": {
    "ok": true,
