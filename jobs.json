@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-16T22:22:31Z",
- "count": 8,
+ "updated": "2026-11-17T13:38:32Z",
+ "count": 9,
  "sources": {
   "fao": {
    "ok": false,
    "count": 2,
-   "error": "RuntimeError: FAO Taleo search (en): got 71 of 77 rows"
+   "error": "RuntimeError: FAO Taleo search (en): got 73 of 79 rows"
   },
   "wfp": {
    "ok": true,
-   "count": 3
+   "count": 4
   },
   "ifad": {
    "ok": true,
@@ -41,8 +41,9 @@
    "count": 0
   },
   "ilo": {
-   "ok": true,
-   "count": 0
+   "ok": false,
+   "count": 0,
+   "error": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "unops": {
    "ok": true,
@@ -528,6 +529,64 @@
     "ba0e5285f8",
     "822caf5d00",
     "fefd0dfa18"
+   ]
+  },
+  {
+   "id": "WFP-JR128520",
+   "agency": "WFP",
+   "title": "Investigations Officer P3",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-12-08",
+   "url": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Rome-Italy/Investigations-Officer-P3_JR128520",
+   "source": "wfp",
+   "first_seen": "2026-11-17",
+   "qr": [
+    "feb68e3ecbf8",
+    "822a73d51208",
+    "ba5eeb03d2e8",
+    "baa90c4a5ae8",
+    "ba858fff7ae8",
+    "82f6d8b9c208",
+    "feaaaaaaabf8",
+    "009d7891b000",
+    "8b8dcfb0e7c8",
+    "bc37a7a75fe0",
+    "e267b56fc790",
+    "484b821cb200",
+    "92eeaefbe210",
+    "8cb51e2b9a30",
+    "1a9d2c245ff0",
+    "f1e5b0918f18",
+    "dac261349218",
+    "0c550436db68",
+    "573b8a778890",
+    "594cf677e918",
+    "dfe2efd1dfc0",
+    "78a7889e88f0",
+    "2ac9da870ad0",
+    "48cd98b0b888",
+    "ef943fb68fd8",
+    "457de23e9930",
+    "bb238af284b0",
+    "c0d2504d8c98",
+    "dbe4dda2edd0",
+    "d4de76334550",
+    "aec5b73d11b0",
+    "81aa78d2cb90",
+    "a3b84874c310",
+    "c48953270f30",
+    "0aec0fabc4e0",
+    "781b0a0be248",
+    "9b0d4fb5af98",
+    "008c98ef98e0",
+    "fe9e1ade8ad0",
+    "821ba8946898",
+    "bab75f94ffc0",
+    "ba0561ae0cb0",
+    "ba6de3bbc4f0",
+    "823fa9faac80",
+    "fee70bd8f1c8"
    ]
   }
  ]
