@@ -1,18 +1,20 @@
 {
- "updated": "2026-11-17T21:08:01Z",
- "count": 9,
+ "updated": "2026-11-18T13:12:39Z",
+ "count": 8,
  "sources": {
   "fao": {
-   "ok": true,
-   "count": 2
+   "ok": false,
+   "count": 2,
+   "error": "RuntimeError: FAO Taleo search (en): got 72 of 78 rows"
   },
   "wfp": {
    "ok": true,
    "count": 4
   },
   "ifad": {
-   "ok": true,
-   "count": 1
+   "ok": false,
+   "count": 1,
+   "error": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "unsecretariat": {
    "ok": true,
@@ -36,8 +38,9 @@
    "error": "RuntimeError: UNICEF: https://jobs.unicef.org/en-us/listing/?page=1&page-items=500 answered with the AWS WAF bot challenge (HTTP 202, empty body) 3 times"
   },
   "iom": {
-   "ok": true,
-   "count": 0
+   "ok": false,
+   "count": 0,
+   "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
   },
   "ilo": {
    "ok": true,
@@ -49,72 +52,6 @@
   }
  },
  "jobs": [
-  {
-   "id": "UNICEF-596785",
-   "agency": "UNICEF",
-   "title": "Knowledge Management Specialist (Emergency Fundraising), P-3, Fixed Term Position, Rome, Italy, Private Fund Raising and Partnerships, #00115523",
-   "grade": "P-3",
-   "location": "Rome, Italy",
-   "deadline": "2026-11-17",
-   "url": "https://jobs.unicef.org/en-us/job/596785/knowledge-management-specialist-emergency-fundraising-p3-fixed-term-position-rome-italy-private-fund-raising-and-partnerships-00115523",
-   "source": "unicef",
-   "first_seen": "2026-11-03",
-   "qr": [
-    "fe52336626a3f8",
-    "823787dbc2f208",
-    "ba3a481eb452e8",
-    "ba51f5a4006ae8",
-    "ba052bfa4b62e8",
-    "82e76a8e6ca208",
-    "feaaaaaaaaabf8",
-    "007dcf8ffd7000",
-    "96c686fa4dcd00",
-    "14969ec9040488",
-    "cbb4c515ad06d0",
-    "303f2d6139c2f0",
-    "76af3783b9c4c0",
-    "081654d4a412e0",
-    "d28e975853c8d8",
-    "502fbc10f8cd80",
-    "1609a1c6db43c8",
-    "98dafe4c8fc998",
-    "0fa47a395150e8",
-    "041932489e3cc8",
-    "cb23823f0bcef0",
-    "40cc38ac01c058",
-    "4e644ea0bc0780",
-    "645b8a2109e2b0",
-    "ffbe8afcd9ef98",
-    "c8e7b18dac18c0",
-    "1a8d61ad1b1a88",
-    "f8f38188fab880",
-    "3f9b54f9db5f88",
-    "4c714bc483c038",
-    "bb6f6621199fd8",
-    "c12983addd3c00",
-    "e273bf8b69e870",
-    "909a3225411618",
-    "f313ce8da908b0",
-    "30ad908749a620",
-    "43ec2ee0bee008",
-    "e071d8ada44810",
-    "c7394d155ac718",
-    "c00b7723b8ae98",
-    "373257befb7d40",
-    "65ceadd49a4348",
-    "ded98af54cdf78",
-    "61002c4aab54c0",
-    "12d186fb6defa8",
-    "00eb7f89998888",
-    "fe59a0a9ac0ae0",
-    "829a58893988a0",
-    "ba3e62fe9f9fd8",
-    "baccb2c9a48bb0",
-    "ba5905b0131280",
-    "82095a8cbd8050",
-    "fefae1c6dd7b10"
-   ]
-  },
   {
    "id": "FAO-2602223",
    "agency": "FAO",
