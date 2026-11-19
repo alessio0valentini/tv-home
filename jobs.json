@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-19T13:29:54Z",
- "count": 6,
+ "updated": "2026-11-19T20:50:15Z",
+ "count": 7,
  "sources": {
   "fao": {
    "ok": false,
-   "count": 2,
-   "error": "RuntimeError: FAO Taleo search (en): got 70 of 76 rows"
+   "count": 1,
+   "error": "RuntimeError: FAO Taleo search (en): got 73 of 79 rows"
   },
   "wfp": {
    "ok": true,
-   "count": 4
+   "count": 5
   },
   "ifad": {
    "ok": true,
@@ -33,7 +33,7 @@
   },
   "unicef": {
    "ok": false,
-   "count": 1,
+   "count": 0,
    "error": "RuntimeError: UNICEF: https://jobs.unicef.org/en-us/listing/?page=1&page-items=500 answered with the AWS WAF bot challenge (HTTP 202, empty body) 3 times"
   },
   "iom": {
@@ -56,7 +56,7 @@
    "title": "Communications Officer (Partnerships and Regional Engagement Coordination) - Call for Interest (Temporary Professional Officer)",
    "grade": "P-3",
    "location": "Rome, Italy",
-   "deadline": "2026-11-19",
+   "deadline": "2026-11-22",
    "url": "https://job.ifad.org/psc/IFHRPRDE/CAREERS/JOBS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&JobOpeningId=38956&PostingSeq=1&SiteId=1000&languageCd=ENG&FOCUS=Applicant",
    "source": "ifad",
    "first_seen": "2026-11-06",
@@ -296,6 +296,68 @@
     "ba827e17a81d8",
     "822457b26cd60",
     "fe9da1135c278"
+   ]
+  },
+  {
+   "id": "WFP-JR128536",
+   "agency": "WFP",
+   "title": "Logistics Officer P3 – Global Commodity Tracking Information Analytics",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-12-03",
+   "url": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Rome-Italy/Logistics-Officer-P3---Global-Commodity-Tracking-Information-Analytics_JR128536",
+   "source": "wfp",
+   "first_seen": "2026-11-19",
+   "qr": [
+    "fe3bd1ce88bf8",
+    "8274bff1fba08",
+    "badb6d72b9ae8",
+    "bae3a0e5392e8",
+    "ba8627e79c2e8",
+    "829e0a2936208",
+    "feaaaaaaaabf8",
+    "00c5f23ce0000",
+    "be1637e51bbe0",
+    "8cc4d246846e0",
+    "de5e92a8f5998",
+    "ad10f85dc4980",
+    "c7827fc35b930",
+    "a106058f543d0",
+    "6fb9d930bb818",
+    "ad74a41af4388",
+    "c21a2be71bb60",
+    "842a84c71c280",
+    "8362b3b86a958",
+    "f133c81840b80",
+    "bf1a6bf76fc28",
+    "048d725700380",
+    "8fe607edeafb8",
+    "88c83e3aa68d0",
+    "cae9bea17eaf8",
+    "08d3922b9d8c0",
+    "5fdb93e9fbfb8",
+    "e595eeddd2818",
+    "1ee2bfe53dea0",
+    "b8f705df5d540",
+    "1fb1d20862338",
+    "f570143c26888",
+    "8f4b58633fce0",
+    "9511d5d71cd10",
+    "2b9201c5f6358",
+    "5c82d71ef6888",
+    "6efba1623b4b8",
+    "415d35e71c520",
+    "471c5bd1fafb8",
+    "71c8da3c86910",
+    "e2776fe43ffb0",
+    "00f3963f8c880",
+    "fe0ad2b62ead8",
+    "82db563ab0888",
+    "bae69ff11eff8",
+    "baf267665d5f8",
+    "badd47e172720",
+    "820be948a0608",
+    "fedbb9067aa78"
    ]
   },
   {
