@@ -1,11 +1,10 @@
 {
- "updated": "2026-11-20T13:12:00Z",
- "count": 7,
+ "updated": "2026-11-20T20:34:58Z",
+ "count": 8,
  "sources": {
   "fao": {
-   "ok": false,
-   "count": 1,
-   "error": "RuntimeError: FAO Taleo search (en): got 75 of 81 rows"
+   "ok": true,
+   "count": 1
   },
   "wfp": {
    "ok": true,
@@ -13,16 +12,15 @@
   },
   "ifad": {
    "ok": true,
-   "count": 1
+   "count": 2
   },
   "unsecretariat": {
    "ok": true,
    "count": 0
   },
   "undp": {
-   "ok": false,
-   "count": 0,
-   "error": "TimeoutError: The read operation timed out"
+   "ok": true,
+   "count": 0
   },
   "unhcr": {
    "ok": true,
@@ -409,6 +407,72 @@
     "ba0e5285f8",
     "822caf5d00",
     "fefd0dfa18"
+   ]
+  },
+  {
+   "id": "IFAD-39245",
+   "agency": "IFAD",
+   "title": "Finance Officer (Development Finance) - Call for Interest (Temporary Professional Officer)",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-12-06",
+   "url": "https://job.ifad.org/psc/IFHRPRDE/CAREERS/JOBS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&JobOpeningId=39245&PostingSeq=1&SiteId=1000&languageCd=ENG&FOCUS=Applicant",
+   "source": "ifad",
+   "first_seen": "2026-11-20",
+   "qr": [
+    "fe9693e20123f8",
+    "82971db7353208",
+    "ba121783a112e8",
+    "ba88fca07b6ae8",
+    "ba4f4af95e22e8",
+    "8247528937a208",
+    "feaaaaaaaaabf8",
+    "00c7e68968f800",
+    "b72d66fd55aa58",
+    "e80e8d8794e508",
+    "e2eb0b12976f10",
+    "e18c890ff08288",
+    "56e4d0475c0398",
+    "614c4a514b9938",
+    "bf6a61390359a8",
+    "dd56e1cc1dc250",
+    "ab3cf4a3a74820",
+    "0c31f1bce58350",
+    "b36de0e3c3de00",
+    "95bdf062ccb778",
+    "7303224251d970",
+    "e5668d9ed4b010",
+    "e33a8fd5aa3230",
+    "29208509ad0b40",
+    "2ff749f90d7ff0",
+    "f8d7b9894e98f0",
+    "4ae8aead36aad8",
+    "18d1188b51c8c0",
+    "ef92ddf9c13fc0",
+    "d90bebe879cf00",
+    "476522bd150040",
+    "bcbb9fe5a4d368",
+    "2b0ab61c70f9c8",
+    "21f247b784a7a8",
+    "67299d33b27920",
+    "a864fada407818",
+    "f6c3dd4f3a4a50",
+    "78436fe0ce9660",
+    "4e684ad9395698",
+    "9147dd60252dd8",
+    "4b5d696de72f80",
+    "74c562cce98158",
+    "dee51ad7b05000",
+    "61cfe4157798b0",
+    "132a2af874ffe8",
+    "00a45a8e0078d0",
+    "fec156a8c8fab0",
+    "82c7918e2c0890",
+    "ba25daff5e1ff0",
+    "baec00ed564578",
+    "bad0ca5f60a500",
+    "820a232abbc950",
+    "fed41475a330f0"
    ]
   },
   {
