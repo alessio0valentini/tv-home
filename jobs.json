@@ -1,18 +1,20 @@
 {
- "updated": "2026-11-20T20:34:58Z",
+ "updated": "2026-11-21T12:48:24Z",
  "count": 8,
  "sources": {
   "fao": {
-   "ok": true,
-   "count": 1
+   "ok": false,
+   "count": 1,
+   "error": "RuntimeError: FAO Taleo search (en): got 73 of 79 rows"
   },
   "wfp": {
    "ok": true,
    "count": 5
   },
   "ifad": {
-   "ok": true,
-   "count": 2
+   "ok": false,
+   "count": 2,
+   "error": "RuntimeError: IFAD: job results grid not found (session or page format changed?)"
   },
   "unsecretariat": {
    "ok": true,
