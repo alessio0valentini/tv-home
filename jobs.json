@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T12:48:24Z",
+ "updated": "2026-11-21T19:33:11Z",
  "count": 8,
  "sources": {
   "fao": {
@@ -12,9 +12,8 @@
    "count": 5
   },
   "ifad": {
-   "ok": false,
-   "count": 2,
-   "error": "RuntimeError: IFAD: job results grid not found (session or page format changed?)"
+   "ok": true,
+   "count": 2
   },
   "unsecretariat": {
    "ok": true,
