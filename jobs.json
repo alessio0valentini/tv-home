@@ -1,15 +1,14 @@
 {
- "updated": "2026-11-24T14:59:20Z",
- "count": 7,
+ "updated": "2026-11-24T22:38:35Z",
+ "count": 8,
  "sources": {
   "fao": {
-   "ok": false,
-   "count": 1,
-   "error": "RuntimeError: FAO Taleo search (en): got 74 of 80 rows"
+   "ok": true,
+   "count": 1
   },
   "wfp": {
    "ok": true,
-   "count": 5
+   "count": 6
   },
   "ifad": {
    "ok": true,
@@ -466,6 +465,68 @@
     "ba6de3bbc4f0",
     "823fa9faac80",
     "fee70bd8f1c8"
+   ]
+  },
+  {
+   "id": "WFP-JR128634",
+   "agency": "WFP",
+   "title": "Advanced Analytics and Digital Product Specialist",
+   "grade": "P-3",
+   "location": "Rome, Italy",
+   "deadline": "2026-12-15",
+   "url": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Rome-Italy/Advanced-Analytics-and-Digital-Product-Specialist_JR128634-3",
+   "source": "wfp",
+   "first_seen": "2026-11-24",
+   "qr": [
+    "fe19f98350bf8",
+    "820b0fd62ba08",
+    "bab94dfaa1ae8",
+    "badcb0f5292e8",
+    "ba8767f6142e8",
+    "829852292e208",
+    "feaaaaaaaabf8",
+    "00adc23ce0000",
+    "be013fe51a3e0",
+    "9d1171c684740",
+    "cb8b3ca8f5c98",
+    "ecb7c059a7880",
+    "060bc3c719870",
+    "10a2bb0f14250",
+    "bb900f30fe138",
+    "38261a7411388",
+    "bf7b75c9cbb60",
+    "84e814dcc0280",
+    "c26993cbfe958",
+    "1db6587850d98",
+    "ea988ba77fe38",
+    "01f3926710780",
+    "3feb57f5eafb8",
+    "f8ce263aa68c0",
+    "da88fea17eaf8",
+    "a8ed322b9d8a0",
+    "efc613e9fbff8",
+    "91612e9fd3a18",
+    "6622f6e51dae0",
+    "64bd875f1cd60",
+    "167c320866618",
+    "e4b4052230d98",
+    "020b4c760d4f8",
+    "493ae7c248d00",
+    "dbd1045626358",
+    "55d3169ee6908",
+    "1bf8a1023b4a8",
+    "e038f5961c530",
+    "47cbdbc162fb8",
+    "71045a7c86908",
+    "e2ba6fe43ffb8",
+    "00bcf63f8c8c0",
+    "fe3472b62eab8",
+    "82b8b638b4888",
+    "bad027f778ff8",
+    "baf47f061c3c8",
+    "baafcdc572700",
+    "82521b1451608",
+    "fead39482a078"
    ]
   }
  ]
