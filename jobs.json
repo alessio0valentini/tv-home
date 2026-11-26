@@ -1,11 +1,10 @@
 {
- "updated": "2026-11-25T21:51:38Z",
+ "updated": "2026-11-26T14:01:39Z",
  "count": 6,
  "sources": {
   "fao": {
-   "ok": false,
-   "count": 1,
-   "error": "RuntimeError: FAO Taleo search (en): got 74 of 80 rows"
+   "ok": true,
+   "count": 1
   },
   "wfp": {
    "ok": true,
@@ -43,7 +42,7 @@
   "ilo": {
    "ok": false,
    "count": 0,
-   "error": "RuntimeError: ILO: paging got 10 of 11 jobs for en_GB"
+   "error": "RuntimeError: ILO: paging got 12 of 13 jobs for en_GB"
   },
   "unops": {
    "ok": true,
